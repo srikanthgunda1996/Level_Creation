@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Level_Creation - Command 1</Text>
+    <Description>Some description for Level_Creation</Description>
+    <Assembly>Level_Creation.dll</Assembly>
+    <FullClassName>Level_Creation.Command1</FullClassName>
+    <ClientId>2ca672e4-8b27-40fc-af84-d3f1ef0f71a5</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Level_Creation - Command 2</Text>
+    <Description>Some description for Level_Creation</Description>
+    <Assembly>Level_Creation.dll</Assembly>
+    <FullClassName>Level_Creation.Command2</FullClassName>
+    <ClientId>29a10521-055a-4c33-a111-74655b1774e5</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Level_Creation</Name>
+    <Assembly>Level_Creation.dll</Assembly>
+    <FullClassName>Level_Creation.App</FullClassName>
+    <ClientId>42ca5c7d-4f32-4de3-99ec-aef53ace8a70</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+</RevitAddIns>
