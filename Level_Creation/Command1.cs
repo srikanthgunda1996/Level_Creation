@@ -69,7 +69,7 @@ namespace Level_Creation
                     ViewPlan newplan = ViewPlan.Create(doc, vfamtyp.Id, name1.Id);
                     newplan.Name = "BUZZ_" + i.ToString(); 
                 }
-                if (i % 5 == 0 && i % 5 == 0)
+                if (i % 3 == 0 && i % 5 == 0)
                  {
                     FilteredElementCollector collec1 = new FilteredElementCollector(doc);
                     collec1.OfCategory(BuiltInCategory.OST_TitleBlocks);
