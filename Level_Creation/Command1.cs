@@ -94,7 +94,6 @@ namespace Level_Creation
                     elev += floor;
                
             }
-            TaskDialog.Show("Levels Created", "All the Levels, Floor Plans, Ceiling Plans and Sheets got Created");
             
             t.Commit();
             t.Dispose();
