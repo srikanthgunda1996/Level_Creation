@@ -36,8 +36,8 @@ namespace Level_Creation
             {
                 Level name1 = Level.Create(doc, elev);
                 name1.Name = "Level" + i.ToString();
-                FilteredElementCollector collec = new FilteredElementCollector(doc)
-                .OfClass(typeof(ViewFamilyType));
+                FilteredElementCollector collec = new FilteredElementCollector(doc);
+                collec.OfClass(typeof(ViewFamilyType));
 
 
                 if (i % 3 == 0)
