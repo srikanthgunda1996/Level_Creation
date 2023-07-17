@@ -36,8 +36,8 @@ namespace Level_Creation
             {
                 Level name1 = Level.Create(doc, elev);
                 name1.Name = "Level" + i.ToString();
-                FilteredElementCollector collec = new FilteredElementCollector(doc);
-                collec.OfClass(typeof(ViewFamilyType));
+                FilteredElementCollector collec = new FilteredElementCollector(doc)
+                .OfClass(typeof(ViewFamilyType));
 
 
                 if (i % 3 == 0)
@@ -69,7 +69,7 @@ namespace Level_Creation
                     ViewPlan newplan = ViewPlan.Create(doc, vfamtyp.Id, name1.Id);
                     newplan.Name = "BUZZ_" + i.ToString(); 
                 }
-                if (i % 5 == 0 && i % 5 == 0)
+                if (i % 5 == 0 && i % 3 == 0)
                  {
                     FilteredElementCollector collec1 = new FilteredElementCollector(doc);
                     collec1.OfCategory(BuiltInCategory.OST_TitleBlocks);
@@ -94,6 +94,7 @@ namespace Level_Creation
                     elev += floor;
                
             }
+            TaskDialog.Show("Levels Created", "All the Levels, Floor Plans, Ceiling Plans and Sheets got Created");
 
             
             t.Commit();
