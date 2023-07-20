@@ -39,8 +39,17 @@ namespace Level_Creation
                 FilteredElementCollector collec = new FilteredElementCollector(doc)
                 .OfClass(typeof(ViewFamilyType));
 
+                if (i % 3 == 0 && i % 5 == 0)
 
-                if (i % 3 == 0)
+                {
+                    FilteredElementCollector collec1 = new FilteredElementCollector(doc);
+                    collec1.OfCategory(BuiltInCategory.OST_TitleBlocks);
+                    ViewSheet viewSheet = ViewSheet.Create(doc, collec1.FirstElementId());
+                    viewSheet.Name = "FIZZBUZZ_" + i.ToString();
+                    viewSheet.SheetNumber = i.ToString();
+                }
+
+                else if (i % 3 == 0)
                 {
                     ViewFamilyType vfamtyp = null;
                     foreach (ViewFamilyType vf in collec)
@@ -51,11 +60,11 @@ namespace Level_Creation
                             break;
                         }
                     }
-                ViewPlan newplan = ViewPlan.Create(doc, vfamtyp.Id, name1.Id);
-                newplan.Name = "FIZZ_" + i.ToString(); ;
+                    ViewPlan newplan = ViewPlan.Create(doc, vfamtyp.Id, name1.Id);
+                    newplan.Name = "FIZZ_" + i.ToString(); ;
                 }
 
-                if (i % 5 == 0)
+                else if (i % 5 == 0)
                 {
                     ViewFamilyType vfamtyp = null;
                     foreach (ViewFamilyType vf in collec)
@@ -67,18 +76,10 @@ namespace Level_Creation
                         }
                     }
                     ViewPlan newplan = ViewPlan.Create(doc, vfamtyp.Id, name1.Id);
-                    newplan.Name = "BUZZ_" + i.ToString(); 
+                    newplan.Name = "BUZZ_" + i.ToString();
                 }
-<<<<<<< HEAD
-=======
-                if (i % 3 == 0 && i % 5 == 0)
->>>>>>> 7b2f60dee105c020c79e1a2b5ce8632946738405
-                 {
-                    FilteredElementCollector collec1 = new FilteredElementCollector(doc);
-                    collec1.OfCategory(BuiltInCategory.OST_TitleBlocks);
-                    ViewSheet viewSheet = ViewSheet.Create(doc, collec1.FirstElementId());
-                    viewSheet.Name = "FIZZBUZZ_" + i.ToString();
-                    viewSheet.SheetNumber = i.ToString();
+
+                
 
                     //ViewFamilyType vfamtyp = null;
                     //foreach (ViewFamilyType vf in collec)
@@ -93,14 +94,14 @@ namespace Level_Creation
                     //newplan.Name = "FIZZBUZZ" + i.ToString(); ;
                     //XYZ poin = new XYZ(1, 1, 0);
                     //Viewport vport = Viewport.Create(doc, viewSheet.Id, newplan.Id,poin);
-                }
                     elev += floor;
                
             }
-            TaskDialog.Show("Levels Created", "All the Levels, Floor Plans, Ceiling Plans and Sheets got Created");
+            
 
             
             t.Commit();
+            TaskDialog.Show("Levels Created", "All the Levels, Floor Plans, Ceiling Plans and Sheets got Created");
             t.Dispose();
 
 
